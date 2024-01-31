@@ -4,6 +4,7 @@ public class SubarrayOfMaximumSum {
     //start is the start of window
     //end is the end of window
     //window size=end-size+1 and question mai window size k diya hoga
+    //number of total windows=arr.size-k+1
 
     static int func(int arr[],int k){
         int start=0;
