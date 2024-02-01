@@ -8,7 +8,7 @@ public class FirstNegativeNumberInEveryWindow {
         //to give ans
         int ans[]=new int[arr.length-k+1];
 
-        //to store neagtive number in FIFO order
+        //to store neagtive number in FIFO order.
         Deque<Integer> queue=new ArrayDeque<>();
 
         int start=0;
@@ -19,20 +19,21 @@ public class FirstNegativeNumberInEveryWindow {
             end++;
         }
 
-        //yaha aane ke baad start is on start of window and is just after the last element of window
+        //yaha aane ke baad start is on start of window and end is just after the last element of window
+        //ans and queue mai first window ke saare negative elements aa gye
         while (end<arr.length){
             //first negative element of current window is head of queue
             ans[start]=queue.peek();
 
-            //since start++ kr rhe hai and, agar start negative hai toh voh queue mai hoga and aage start is not part of window toh usko window se hatao
+            // start ko hatane se pehle agar start ka element queue mai hai toh use hatao.
+            //and vo queue mai tabhi hoga agar vo negative hoga and vo head pr hoga toh hume head remove krna hai.
             if(arr[start]<0){
                 queue.poll();
             }
-            start++;
             //check whether end is negative or not
             if(arr[end]<0){queue.add(arr[end]);}
+            start++;
             end++;
-
         }
         return ans;
     }

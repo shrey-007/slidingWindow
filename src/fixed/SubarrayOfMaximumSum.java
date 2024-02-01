@@ -19,8 +19,9 @@ public class SubarrayOfMaximumSum {
             end++;
         }
 
-        //yaha pr aakr sum mai first window ka sum store hai. start is at 0(starting of first window)
+        //yaha pr aakr ans mai first window ka sum store hai. start is at 0(starting of first window)
         //and end(end of window ke baad vala index hai , end of window nhi h)
+        //ans mai first window ka sum hai(this is important thing)
 
 
         while(end<arr.length-1){
