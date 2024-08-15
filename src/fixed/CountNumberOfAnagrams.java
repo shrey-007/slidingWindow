@@ -1,7 +1,12 @@
 package fixed;
 
 import java.util.HashMap;
-//still not solved, passed 50/90 testcases on gfg
+import java.util.HashSet;
+
+/**
+ * Given a word and a text, return the count of the occurrences of anagrams of the word in the text
+ * (For eg: anagrams of word for are for, ofr, rof etc.))
+ */
 public class CountNumberOfAnagrams {
     public static int func(String str,String ptr){
         int ans=0;
@@ -70,6 +75,57 @@ public class CountNumberOfAnagrams {
         }
         if(count==0){ans++;}
             return ans;
+    }
+
+    public static int func2(String str,String ptr){
+
+        int ans=0;
+
+        //isme jo k hoga voh ptr ki length hogi
+        int k=ptr.length();
+
+        //sabse pehle ptr ka hashmap banalo
+        HashMap<Character,Integer> hashMap=new HashMap<>();
+        for (int i = 0; i < ptr.length(); i++) {
+            char curr=ptr.charAt(i);
+            if(hashMap.containsKey(curr)){
+                hashMap.put(curr,hashMap.get(curr)+1);
+            }
+            else{
+                hashMap.put(curr,1);
+            }
+        }
+
+        int start=0;
+        int end=0;
+        while (end<str.length()){
+
+            // do work
+            char charAtEnd=str.charAt(end);
+            if(hashMap.containsKey(charAtEnd)){
+                hashMap.put(charAtEnd,hashMap.get(charAtEnd)+1);
+            }
+            else{
+                hashMap.put(charAtEnd,1);
+            }
+
+            if(end-start+1<k){
+                end++;
+            }
+
+            else if(end-start+1==k){
+                if()
+                ans++;
+
+            }
+
+
+
+        }
+
+
+
+        return ans;
     }
 
 

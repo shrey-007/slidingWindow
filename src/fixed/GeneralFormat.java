@@ -9,18 +9,24 @@ public class GeneralFormat {
        int ans=0;
        while(end<arr.length){
 
-           //calculations
+           //calculations(do work)
 
            if (windowSize < k) {
                end++;
            }
 
            else if(windowSize==k){
-               //then this is one of the possible answer so update
-               //reomove calculaton for i
-               //maintain window size and slide
+               //then this is one of the possible answer so update ans
+
+               //remove calculaton for i
+               start++;
+               end++;
+               // yaha par start ka removal kara and start ko bada diya, end ko badaya but end ko anwer mai include nhi
+               // kiya vo agli iteration mai (do work) vaale section mai hoga toh usme end se related kaam hoga
            }
        }
+
+
        return ans;
 
     }
